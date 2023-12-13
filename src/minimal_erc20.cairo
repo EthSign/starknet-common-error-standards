@@ -47,9 +47,9 @@ mod MinimalERC20 {
     }
 
     #[constructor]
-    fn constructor(ref self: ContractState, name: felt252, symbol: felt252) {
-        self.name.write(name);
-        self.symbol.write(symbol);
+    fn constructor(ref self: ContractState) {
+        self.name.write('Test ERC20');
+        self.symbol.write('TEST');
         self._mint(get_caller_address(), 1000000);
     }
 
